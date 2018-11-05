@@ -70,7 +70,13 @@
 			<artifactId>spring-data-redis</artifactId>
 			<version>1.6.2.RELEASE</version>
 		</dependency>
-
+		
+		<!-- spring session 集成 -->
+		<dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+            <version>1.2.2.RELEASE</version>
+        </dependency>
 
 		<!-- redis 连接池 -->
 		<dependency>
@@ -78,6 +84,7 @@
 			<artifactId>commons-pool2</artifactId>
 			<version>2.4.2</version>
 		</dependency>
+		
 
 		<!-- junit 测试包 -->
 		<dependency>
