@@ -53,8 +53,13 @@
 		</property>
 	</bean>
 
-
-	<bean id="redisUtil" class="com.gavin.redis.util.RedisTemplateUtil">
-		<property name="redisTemplate" ref="redisTemplate" />
+	<!-- 将session放入redis -->
+	<bean id="redisHttpSessionConfiguration"
+		class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
+		<property name="maxInactiveIntervalInSeconds" value="${spring_session_max_inactive_interval_in_seconds}" />
 	</bean>
+
+    <bean id="redisCache" class="com.gavin.redis.util.RedisCacheUtil">  
+        <property name="redisTemplate" ref="redisTemplate" />  
+    </bean>
 </beans>
